@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+
+<head>
+  <!-- meta -->
+  <meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ metadata.title }}{% endif %}">
+  {% metagen
+      desc=desc or metadata.desc,
+      url=url + page.url,
+      locale=sitemeta.siteLocale,
+      generator=eleventy.generator
+  %}
+
+  <!-- title -->
+  <title>{% if title %} {{ title }} | {% endif %} {{ metadata.title }}</title>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="/assets/imgs/me-icon.ico" type="image/x-icon">
+
+  <!-- stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+    {{ content | safe }}
+  </main>
+
+  <script src="./assets/js/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
