@@ -8,6 +8,7 @@ Built with [Eleventy](https://www.11ty.dev/)
 
 ```bash
 npm init -y
+npm install
 npm run start
 ```
 
